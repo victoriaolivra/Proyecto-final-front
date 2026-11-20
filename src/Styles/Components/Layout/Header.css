@@ -1,0 +1,66 @@
+header {
+    background: var(--crema);
+    border-bottom: 1px solid var(--petalo);
+}
+
+header .holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 22px 20px;
+    max-width: var(--ancho);
+    margin: 0 auto;
+}
+
+header .holder img {
+    width: 84px !important;
+    height: 84px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+    display: block;
+    border: 3px solid var(--petalo);
+    box-shadow: var(--sombra);
+}
+
+header .marca {
+    text-align: left;
+}
+
+header .holder h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--vino);
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* La firma se usa solo acá, una vez y en chico */
+header .firma {
+    display: block;
+    font-family: var(--fuente-firma);
+    font-size: 1.5rem;
+    color: var(--ciruela);
+    line-height: 1.2;
+    margin-top: 2px;
+}
+
+/* En celular */
+@media (max-width: 768px) {
+    header .holder {
+        gap: 14px;
+        padding: 14px 16px;
+    }
+    header .holder img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    header .holder h1 {
+        font-size: 1.6rem;
+    }
+    header .firma {
+        font-size: 1.2rem;
+    }
+}

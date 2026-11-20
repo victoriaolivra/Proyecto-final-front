@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Tema de Bakes Lourdes: colores, tipografías y reglas generales.
+   Se importa una sola vez (en index.js). Los demás estilos usan estas variables,
+   así que para cambiar un color de todo el sitio alcanza con cambiarlo acá.
+   ========================================================================== */
+
+:root {
+    /* Paleta: del vino al crema, todos de la misma familia */
+    --vino: #4B0F1F;        /* títulos, botones, menú y pie */
+    --ciruela: #7A3F56;     /* links y estados al pasar el mouse */
+    --empolvado: #B78793;   /* solo adornos (no usar para texto) */
+    --petalo: #E8C9D0;      /* bordes y detalles suaves */
+    --blush: #F7EFEF;       /* fondo de secciones alternas */
+    --crema: #FFFCFA;       /* fondo de la página */
+    --texto: #2B1A1E;       /* párrafos */
+    --texto-suave: #6B5258; /* textos secundarios */
+    --error: #9B1C1C;
+    --ok: #2F6B3A;
+
+    /* Tipografías: títulos con serif, texto con sans serif, y una firma de uso mínimo */
+    --fuente-titulos: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --fuente-texto: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+    --fuente-firma: 'Pinyon Script', 'Brush Script MT', cursive;
+
+    /* Formas y sombras (las mismas en todo el sitio) */
+    --radio: 16px;
+    --radio-chico: 10px;
+    --sombra: 0 6px 24px rgba(75, 15, 31, 0.08);
+    --sombra-fuerte: 0 12px 32px rgba(75, 15, 31, 0.16);
+    --ancho: 1100px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--crema);
+    color: var(--texto);
+    font-family: var(--fuente-texto);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuente-titulos);
+    color: var(--vino);
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+a {
+    color: var(--ciruela);
+}
+
+img {
+    max-width: 100%;
+}
+
+::selection {
+    background: var(--petalo);
+    color: var(--vino);
+}
+
+/* Anillo de foco visible al navegar con el teclado */
+:focus-visible {
+    outline: 3px solid var(--ciruela);
+    outline-offset: 2px;
+}
+
+/* Botón reutilizable en todo el sitio */
+.boton {
+    display: inline-block;
+    background: var(--vino);
+    color: var(--crema);
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 28px;
+    font: 500 0.95rem var(--fuente-texto);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.boton:hover {
+    background: var(--ciruela);
+    transform: translateY(-1px);
+    box-shadow: var(--sombra);
+}
+
+.boton:disabled {
+    background: var(--empolvado);
+    cursor: wait;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Respeta a quienes tienen desactivadas las animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; animation: none !important; }
+}
+
+
+/* ==========================================================================
+   Piezas compartidas por todas las páginas
+   ========================================================================== */
+
+/* Contenedor de cada página */
+.holder {
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Título de página, con una rayita decorativa abajo */
+.titulo-pagina {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin: 0 0 12px;
+}
+
+.titulo-pagina::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin: 14px auto 0;
+    background: var(--empolvado);
+    border-radius: 2px;
+}
+
+/* Frase corta debajo del título */
+.subtitulo-pagina {
+    text-align: center;
+    color: var(--texto-suave);
+    max-width: 640px;
+    margin: 0 auto 36px;
+}
+
+/* Tarjeta blanca con borde suave y sombra */
+.tarjeta {
+    background: #fff;
+    border: 1px solid var(--petalo);
+    border-radius: 24px;
+    box-shadow: var(--sombra);
+}

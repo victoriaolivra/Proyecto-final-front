@@ -1,0 +1,115 @@
+nav {
+    background: var(--vino);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 14px rgba(75, 15, 31, 0.25);
+}
+
+nav .holder {
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+nav ul li a {
+    position: relative;
+    display: block;
+    padding: 17px 18px;
+    color: var(--crema);
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+/* Rayita que aparece al pasar el mouse y en la página actual */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 11px;
+    height: 2px;
+    background: var(--petalo);
+    transform: scaleX(0);
+    transition: transform 0.25s;
+}
+
+nav ul li a:hover {
+    color: var(--petalo);
+}
+
+nav ul li a:hover::after,
+nav ul li a.activo::after {
+    transform: scaleX(1);
+}
+
+nav ul li a.activo {
+    color: var(--petalo);
+}
+
+nav a:focus-visible,
+nav .hamburger:focus-visible {
+    outline-color: var(--petalo);
+    outline-offset: -3px;
+}
+
+/* Botón del menú: solo se ve en celular */
+.hamburger {
+    display: none;
+    width: 100%;
+    background: var(--vino);
+    color: var(--crema);
+    border: 0;
+    font: 500 0.85rem var(--fuente-texto);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav .holder {
+        padding: 0;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        border-top: 1px solid rgba(232, 201, 208, 0.25);
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li a {
+        padding: 14px 20px;
+        border-bottom: 1px solid rgba(232, 201, 208, 0.12);
+    }
+
+    nav ul li a::after {
+        display: none;
+    }
+
+    nav ul li a.activo {
+        background: rgba(232, 201, 208, 0.12);
+    }
+}

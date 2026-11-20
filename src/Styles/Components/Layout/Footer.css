@@ -1,0 +1,14 @@
+footer {
+    background: var(--vino);
+    color: var(--petalo);
+    clear: both;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+}
+
+footer p {
+    margin: 0;
+}

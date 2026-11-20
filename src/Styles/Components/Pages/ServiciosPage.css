@@ -1,0 +1,74 @@
+.pagina-servicios .info {
+    max-width: 760px;
+    margin: 0 auto 44px;
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 1.05rem;
+}
+
+.pagina-servicios .info p {
+    margin: 0 0 10px;
+}
+
+/* Una tarjeta por servicio */
+.pagina-servicios .mesa-dulce,
+.pagina-servicios .catering-saldado {
+    background: #fff;
+    border: 1px solid var(--petalo);
+    border-radius: 24px;
+    box-shadow: var(--sombra);
+    padding: 36px;
+    margin-bottom: 36px;
+    text-align: left;
+}
+
+.pagina-servicios h3 {
+    font-size: 1.6rem;
+    margin: 0 0 14px;
+    padding-left: 16px;
+    border-left: 4px solid var(--empolvado);
+}
+
+.pagina-servicios .mesa-dulce p,
+.pagina-servicios .catering-saldado p {
+    color: var(--texto-suave);
+    margin: 0 0 10px;
+}
+
+/* Fotos en cuadrícula, todas del mismo tamaño */
+.pagina-servicios .galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.pagina-servicios .galeria img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radio-chico);
+    box-shadow: 0 3px 10px rgba(75, 15, 31, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pagina-servicios .galeria img:hover {
+    transform: scale(1.03);
+    box-shadow: var(--sombra-fuerte);
+}
+
+@media (max-width: 900px) {
+    .pagina-servicios .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .pagina-servicios .mesa-dulce,
+    .pagina-servicios .catering-saldado {
+        padding: 22px;
+    }
+    .pagina-servicios .galeria {
+        gap: 10px;
+    }
+}

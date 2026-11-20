@@ -1,0 +1,110 @@
+/* Fondo oscuro que cubre toda la pantalla */
+.modal-fondo {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(43, 10, 18, 0.6);
+    animation: modal-aparece 0.2s ease-out;
+}
+
+/* El cartel */
+.modal-promo {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    padding: 40px 32px 32px;
+    background: var(--crema);
+    border: 1px solid var(--petalo);
+    border-radius: 24px;
+    box-shadow: var(--sombra-fuerte);
+    text-align: center;
+    animation: modal-sube 0.25s ease-out;
+}
+
+.modal-x {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ciruela);
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.modal-x:hover {
+    background: var(--blush);
+}
+
+.modal-etiqueta {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 14px;
+    background: var(--blush);
+    border: 1px solid var(--petalo);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ciruela);
+}
+
+.modal-promo h3 {
+    font-size: 1.7rem;
+    margin: 0 0 12px;
+    overflow-wrap: anywhere;
+}
+
+/* Respeta los saltos de línea que escribió la pastelería en el panel */
+.modal-descripcion {
+    margin: 0 0 16px;
+    color: var(--texto-suave);
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.modal-vigencia {
+    margin: 0 0 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ciruela);
+}
+
+.modal-acciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-cerrar {
+    background: transparent;
+    border: 0;
+    color: var(--ciruela);
+    font: 500 0.95rem var(--fuente-texto);
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 6px 12px;
+}
+
+@keyframes modal-aparece {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modal-sube {
+    from { opacity: 0; transform: translateY(14px) scale(0.97); }
+    to { opacity: 1; transform: none; }
+}

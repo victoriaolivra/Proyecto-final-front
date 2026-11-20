@@ -1,0 +1,167 @@
+/* Presentación de la página */
+.pagina-novedades .intro-novedades {
+    max-width: 720px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.pagina-novedades .intro-novedades h3 {
+    font-size: 1.5rem;
+    margin: 0 0 6px;
+}
+
+.pagina-novedades .intro-novedades h4 {
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ciruela);
+    margin: 0 0 12px;
+}
+
+.pagina-novedades .intro-novedades p {
+    margin: 0;
+    color: var(--texto-suave);
+}
+
+/* Una tarjeta por novedad: texto a un lado y fotos al otro */
+.fecha-especial {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    background: #fff;
+    border: 1px solid var(--petalo);
+    border-radius: 24px;
+    box-shadow: var(--sombra);
+    padding: 32px;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.texto-fecha {
+    flex: 1;
+}
+
+.texto-fecha h3 {
+    font-size: 1.7rem;
+    margin: 0 0 6px;
+}
+
+.texto-fecha h4 {
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ciruela);
+    margin: 0 0 14px;
+}
+
+/* El texto respeta los saltos de línea que escribió la pastelería en el panel */
+.texto-fecha p {
+    margin: 0;
+    color: var(--texto-suave);
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.foto-fecha {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.foto-fecha img {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radio);
+    box-shadow: 0 4px 14px rgba(75, 15, 31, 0.12);
+}
+
+.foto-fecha.doble img {
+    max-width: 190px;
+}
+
+/* Mensajes de carga, error y lista vacía */
+.estado-novedades {
+    text-align: center;
+    color: var(--texto-suave);
+    padding: 28px;
+    margin-bottom: 30px;
+}
+
+.estado-error {
+    background: #FBEFEF;
+    border: 1px solid #E5BDBD;
+    border-radius: 20px;
+    color: var(--error);
+}
+
+.estado-error p {
+    margin: 0 0 14px;
+}
+
+.estado-error button {
+    background: var(--vino);
+    color: var(--crema);
+    border: 0;
+    border-radius: 999px;
+    padding: 10px 26px;
+    font: 500 0.95rem var(--fuente-texto);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.estado-error button:hover {
+    background: var(--ciruela);
+}
+
+@media screen and (max-width: 768px) {
+    .fecha-especial {
+        flex-direction: column;
+        text-align: center;
+        padding: 22px;
+        gap: 22px;
+    }
+
+    .foto-fecha {
+        width: 100%;
+    }
+
+    .foto-fecha img {
+        max-width: 100%;
+    }
+
+    .foto-fecha.doble img {
+        max-width: 48%;
+    }
+}
+
+
+/* Botón "Novedad del mes" */
+.promo-barra {
+    text-align: center;
+    margin: -12px 0 40px;
+}
+
+.boton-promo {
+    background: transparent;
+    color: var(--vino);
+    border: 1.5px solid var(--vino);
+}
+
+.boton-promo::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: var(--empolvado);
+    vertical-align: middle;
+}
+
+.boton-promo:hover {
+    background: var(--vino);
+    color: var(--crema);
+}
